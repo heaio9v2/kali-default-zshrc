@@ -2,8 +2,8 @@
 # This script will install and configure the zsh shell for the current user profile
 
 # Install zsh
-sudo apt update
-sudo apt install -y zsh zsh-doc zsh-syntax-highlighting zsh-autosuggestions
+apt update
+apt install -y zsh zsh-doc zsh-syntax-highlighting zsh-autosuggestions
 
 # Copy the Kali .zshrc file to the user profile
 wget "https://raw.githubusercontent.com/heaio9v2/kali-default-zshrc/refs/heads/main/.zshrc" -O $HOME/.zshrc
@@ -13,3 +13,5 @@ sed -i '0,/PROMPT_ALTERNATIVE=twoline/s//PROMPT_ALTERNATIVE=oneline/; 0,/NEWLINE
 
 # Change the default shell
 chsh -s $(which zsh)
+
+echo "Installation complete. Restart your terminal session."
